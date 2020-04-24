@@ -6,9 +6,13 @@ var fontSizeFloat = parseFloat(fontSizeInPx);
 var currentTextSize = fontSizeFloat
 console.log(fontSizeFloat);
 
-setInterval(function() {
-  currentTextSize -= 50
-  initialCountdownVal > 0 ? initialCountdownVal -= 1 : 0; //should break/return when 0
+var interval = setInterval(function() {
+  initialCountdownVal -= 1;
+  currentTextSize -= 45
   countdownElement.innerHTML = initialCountdownVal;
   countdownElement.style.fontSize = (currentTextSize) + 'px';
+
+  if (initialCountdownVal === 0) {
+    clearInterval(interval);
+  }
 }, 1000);
