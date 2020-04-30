@@ -4,12 +4,7 @@ function Book(title, pages, author, read) {
   this.author = author
   this.read = read
   this.info = function() {
-  let isRead
-  if (read == true) {
-      isRead = ', already read.'
-    } else {
-      isRead = ', not read yet.'
-    }
+  let isRead = read ? ', already read.' : ', not read yet.'
     console.log(title + " by " + author + ", " + pages + " pages" + isRead)
   }
 }
